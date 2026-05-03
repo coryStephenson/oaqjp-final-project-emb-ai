@@ -1,6 +1,9 @@
 from EmotionDetection.emotion_detection import emotion_detector
 import unittest
 
+# Wrapping function definitions in a class allows for grouping of related unit tests
+# Separate function definitions allows each test to be run independently
+# The class also allows for inheritance of unittest.TestCase base class as a test unit to manage and report on
 class TestEmotionDetector(unittest.TestCase):
 
     def test_joy(self):
@@ -24,4 +27,4 @@ class TestEmotionDetector(unittest.TestCase):
         self.assertEqual(result["dominant_emotion"], "fear")
 
 if __name__ == '__main__':
-    unittest.main()
+    unittest.main(verbosity=2)
